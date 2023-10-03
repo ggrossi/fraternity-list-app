@@ -5,7 +5,7 @@ import sqlite3 from 'sqlite3';
 
 export default async function handler(req, res) {
   const db = await open({
-    filename: './database/fraternity-listing.db',
+    filename: process.env.SQLITE_DB_PATH || './database/fraternity-listing.db',
     driver: sqlite3.Database,
   });
 
